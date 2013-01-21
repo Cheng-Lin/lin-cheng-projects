@@ -16,6 +16,7 @@ public class ProcessedPicturePanel extends JPanel
 	private BufferedImage picture = null, scaledPic = null, rotatedPic = null;
 	private boolean moving = false, translationEnable = true;
 	private boolean scaling = false, scalingEnable = true;
+	private boolean affining = false, affineEnable = false;
 	private int initX, initY;
 	private int xShift = 0, yShift = 0, offset = 0;
 	private double scalingFactor = 1.0;
@@ -209,6 +210,9 @@ public class ProcessedPicturePanel extends JPanel
 	public void setTranslationEnable(boolean enable) 
 	{	translationEnable = enable;	}
 
+	public void setAffineEnable(boolean enable) 
+	{	affineEnable = enable;		}
+	
 	public void setRotation(int degree) 
 	{
 		radianRotated = degree * Math.PI / 180;
