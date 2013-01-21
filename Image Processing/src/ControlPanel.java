@@ -11,9 +11,10 @@ public class ControlPanel extends JPanel
 	implements ActionListener, ChangeListener
 {
 	private ImageProcessor imgProc;
-	private JCheckBox scaling, translation;
+	private JCheckBox scaling, translation, affine;
 	private JSpinner rotation;
 	private JLabel lblDegree;
+	private JCheckBox chckbxAffine;
 	
 	public ControlPanel(ImageProcessor imgProcIn) 
 	{
@@ -26,7 +27,11 @@ public class ControlPanel extends JPanel
 		
 		translation = new JCheckBox("Translation", true);
 		translation.addActionListener(this);
-		add(translation);		
+		add(translation);
+		
+		affine = new JCheckBox("Affine", false);
+		affine.addActionListener(this);
+		add(affine);
 		
 		JLabel lblRotation = new JLabel("Rotation:");
 		add(lblRotation);
@@ -45,7 +50,16 @@ public class ControlPanel extends JPanel
 		if (e.getSource() == translation) {
 			imgProc.translationEnable(translation.isSelected());
 		} else if (e.getSource() == scaling) {
+			if (scaling.isSelected() == true) {
+				affine.setSelected(false);
+			}
 			imgProc.scalingEnable(scaling.isSelected());
+		} else if (e.getSource() == affine) {
+			if (scaling.isSelected() == true) {
+				scaling.setSelected(false);
+				imgProc.scalingEnable(false);
+			}
+			imgProc.affineEnable(affine.isSelected());
 		}
 	}
 

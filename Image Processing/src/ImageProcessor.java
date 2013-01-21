@@ -68,7 +68,11 @@ public class ImageProcessor extends JFrame
 	public void translationEnable(boolean enable) {
 		procPicPanel.setTranslationEnable(enable);
 	}
-
+	
+	public void affineEnable(boolean enable) {
+		procPicPanel.setAffineEnable(enable);
+	}
+	
 	public void setRotation(int degree) {
 		procPicPanel.setRotation(degree);
 	}
