@@ -1,0 +1,68 @@
+[Room [length=12.0, width=10.0, description=Bedroom, abbr=bed], Room [length=15.0, width=12.0, description=Kitchen, abbr=kit], Room [length=20.0, width=15.0, description=Sitting Room, abbr=sit], Room [length=11.0, width=11.5, description=Bedroom, abbr=bed], Room [length=8.0, width=10.0, description=Bathroom, abbr=ba], Room [length=20.0, width=20.0, description=Studio Room, abbr=st], Room [length=7.0, width=7.0, description=Quiet Room, abbr=qu], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+Testing findNumberOfRooms
+Expected 2 Bedrooms
+Actual Value 2
+Expected 1 Bathroom
+Actual Value 1
+Expected 1 Kitchen
+Actual Value 1
+Expected 1 Sitting Room
+Actual Value 1
+Expected 1 Studio Room
+Actual Value 1
+Expected 1 Quiet Room
+Actual Value 1
+Testing printAreas
+Expected Area for Bedroom 1 is 120
+Expected Area for Bedroom 2 is 126.5
+Actual Area is: 
+Bedroom 1 120.0
+Bedroom 2 126.5
+Expected Area for Bathroom is 80
+Actual Area is: Bathroom 1 80.0
+Expected Area for Kitchen is 180
+Actual Area is: Kitchen 1 180.0
+Expected Area for Sitting Room is 300
+Actual Area is: Sitting Room 1 300.0
+Expected Area for Studio Room is 400
+Actual Area is: Studio Room 1 400.0
+Expected Area for Quiet Room is 49
+Actual Area is: Quiet Room 1 49.0
+Testing getWholeArea
+Expected value is 1255.5
+Actual Area is 1255.5
+
+George's Pizza
+LocatedHouse [house=House [rooms=[Room [length=12.0, width=10.0, description=Bedroom, abbr=bed], Room [length=15.0, width=12.0, description=Kitchen, abbr=kit], Room [length=20.0, width=15.0, description=Sitting Room, abbr=sit], Room [length=11.0, width=11.5, description=Bedroom, abbr=bed], Room [length=8.0, width=10.0, description=Bathroom, abbr=ba], Room [length=20.0, width=20.0, description=Studio Room, abbr=st], Room [length=7.0, width=7.0, description=Quiet Room, abbr=qu], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null], nextUnusedIndex=7], latitude=40.850634, longitude=-73.937275, streetAddress=726 West 181st Street, city=New York, state=NY, zipCode=10033-4728]
+Testing findNumberOfRooms
+Expected 2 Bedrooms
+Actual Value 2
+Expected 1 Bathroom
+Actual Value 1
+Expected 1 Kitchen
+Actual Value 1
+Expected 1 Sitting Room
+Actual Value 1
+Expected 1 Studio Room
+Actual Value 1
+Expected 1 Quiet Room
+Actual Value 1
+Testing printAreas
+Expected Area for Bedroom 1 is 120
+Expected Area for Bedroom 2 is 126.5
+Actual Area is: 
+Bedroom 1 120.0
+Bedroom 2 126.5
+Expected Area for Bathroom is 80
+Actual Area is: Bathroom 1 80.0
+Expected Area for Kitchen is 180
+Actual Area is: Kitchen 1 180.0
+Expected Area for Sitting Room is 300
+Actual Area is: Sitting Room 1 300.0
+Expected Area for Studio Room is 400
+Actual Area is: Studio Room 1 400.0
+Expected Area for Quiet Room is 49
+Actual Area is: Quiet Room 1 49.0
+Testing getWholeArea
+Expected value is 1255.5
+Actual Area is 1255.5

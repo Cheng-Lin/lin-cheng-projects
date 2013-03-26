@@ -1,0 +1,21 @@
+Test case 1: 
+The expect balance for initial balance of 1500, 5 year later with apr of 0.25 is 5168.71
+The actual balance is: 5168.705861557079
+
+The expect year for initial balance of 1500 with apr of 0.25 to reach 5000 is 5 year
+The actual year is: 5
+
+The expect apr for initial balance of 1500 to reach 5000 in 5 year is .25
+The actual apr is: 0.25
+
+
+Test case 2: 
+The expect balance for initial balance of 2000, 5 year later with apr of 0.75 is 75991.73
+The actual balance is: 75991.7277939636
+
+The expect year for initial balance of 2000 with apr of 0.75 to reach 76000 is 6 year
+The actual year is: 6
+
+The expect apr for initial balance of 2000 to reach 76000 in 5 year is 1.00
+The actual apr is: 1.0
+

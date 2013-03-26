@@ -1,0 +1,57 @@
+protected boolean requestFocus(boolean temporary) 
+
+Requests that this Component get the input focus, and that this Component's 
+top-level ancestor become the focused Window.  This component must be 
+displayable, focusable, visible and all of its ancestors (with the exception 
+of the top-level Window) must be visible for the request to be granted.  
+Every effort will be made to honor the request; however, in some cases 
+it may be impossible to do so.  Developers must never assume that this 
+component is the focus owner until this component receives a FOCUS_GAINED 
+event.  If this request is denied because this component's top-level window 
+cannot become the focused window, the request will be remembered and will 
+be granted when the window is later focused by the user.  
+
+This method returns a boolean value.  If false is returned, the request is 
+guaranteed to fail.  If true is returned, the request will succeed unless 
+it is vetoed, or an extraordinary event, such as disposal of the component's 
+peer, occurs before the request can be granted by the native windowing 
+system.  Again, while a return value of true indicates that the request is 
+likely to succeed, developers must never assume that this component is the 
+focus owner until this component receives a FOCUS_GAINED event.  
+
+This method cannot be used to set the focus owner to no component at all.  
+Use KeyboardFocusManager.clearGlobalFocusOwner instead.  
+
+Because the focus behavior of this method is platform-dependent, developers 
+are strongly encouraged to use requestFocusInWindow when possible.  
+
+Every effort will be made to ensure that FocusEvents generated as a result 
+of this request will have the specified temporary value.  However, because 
+specifying an arbitrary temporary state may not be implementable on all 
+native windowing systems, correct behavior for this method can be guaranteed 
+only for lightweight Components.  This method is not intended for general 
+use, but exists instead as a hook for lightweight component libraries, 
+such as Swing.  
+
+Note: Not all focus transfers result from invoking this method.  As such, a 
+component may receive focus without this or any of the other requestFocus 
+methods of Component being invoked.  
+
+Parameters: 
+temporary - true if the focus change is temporary, such as when the 
+window loses the focus; for more information on temporary focus changes 
+see the Focus Specification 
+Returns: 
+false if the focus change request is guaranteed to fail; true if it is 
+likely to succeed 
+Since: 
+1.4 
+See Also: 
+FocusEvent, addFocusListener(java.awt.event.FocusListener), isFocusable(), 
+isDisplayable(), KeyboardFocusManager.clearGlobalFocusOwner() 
+
+
+This method cannot be used to set the focus owner to no component at all.  
+
+
+addFocusListener(java.awt.event.FocusListener),

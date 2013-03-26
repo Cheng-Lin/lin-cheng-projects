@@ -1,0 +1,18 @@
+Top, in class Top
+A
+Top, in class Top
+10
+Top, in class Top
+-------------------
+Middle, in class Top
+A
+Middle, in class Middle
+12
+Middle, in class Top
+-------------------
+Bottom, in class Bottom
+B
+Bottom, in class Middle
+12
+Bottom, in class Top
+-------------------

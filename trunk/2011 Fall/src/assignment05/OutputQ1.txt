@@ -1,0 +1,5 @@
+The expect average for the list (1, 2, 3, 4) is 2.5.
+The actual average is: 2.5
+
+The expect averge for 1, 2, 3, 4 ... 14, 15 is 8.
+The actual value is: 8.0

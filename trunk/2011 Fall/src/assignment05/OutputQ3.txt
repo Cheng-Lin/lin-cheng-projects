@@ -1,0 +1,23 @@
+Input the amount deposit to account John Quick 
+Input the amount deposit to account Jack Slow 
+Input the amount deposit to account Mary Mary 
+Input the amount deposit to account Ben Kick 
+IllegalArgumentException thrown with message java.lang.NumberFormatException: For input string: "one billion"
+
+
+The amount intend to transfer from John Quick to Mary Mary is 893
+The current balance of the account John Quick after transfer is 1037.0
+The current balance of the account Mary Mary after receive is 9741.0
+
+The amount intend to transfer from Jack Slow to Mary Mary is 124535
+IllegalArgumentException thrown with message assignment05.InsufficientFundsException: Amount = 124535.0 is too large, penalty = $15
+The current balance of the account Jack Slow after penalty is 118438.0
+
+The amount intend to transfer from Mary Mary to Ben Kick is 8012
+The current balance of the account Mary Mary after transfer is 1729.0
+The current balance of the account Ben Kick after receive is 17485.0
+
+The amount intend to transfer from Ben Kick to Mary Mary is 11164
+The current balance of the account Ben Kick after transfer is 6321.0
+The current balance of the account Mary Mary after receive is 12893.0
+
