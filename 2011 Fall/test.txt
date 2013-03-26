@@ -1,0 +1,11 @@
+STO # 10
+16 20
+LOD #16
+STO 5
+LOD &5
+MUL 16
+
+STO  &  10
+ADD 2G
+
+10 50

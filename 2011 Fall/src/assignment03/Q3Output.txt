@@ -1,0 +1,6 @@
+Test Example: 1250 interest, 100000 income, 500 deduction, and married is 396 deduction
+Enter the amount of interest: 1250
+Enter the total income: 100000
+Enter the total of other deduction: 500
+Are you married(y/n): y
+Total Student loan interest deduction is: 396

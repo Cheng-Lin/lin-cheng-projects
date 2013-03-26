@@ -1,0 +1,11 @@
+57.49754405785876
+30.437116841334323
+20.95697585881452
+
+Average: 36.297212252669205
+Minimum: 20.95697585881452
+Maximum: 57.49754405785876
+Check Values Return: true
+
+Back up corrupted!
+Check Values Return: false

@@ -1,0 +1,13 @@
+The expect radius of the balloon is 2.879 cm
+The actual radius of the balloon is: 2.8794119114848606
+The expect surface area of the balloon is 104.188 cm^2
+The actual surface area of the balloon is: 104.18794157356089
+The expect volume of the balloon is 100 cm^3
+The actual volume of the balloon is: 100.0
+
+The expect radius of the balloon is 3.628 cm
+The actual radius of the balloon is: 3.6278316785978095
+The expect surface area of the balloon is 165.388 cm^2
+The actual surface area of the balloon is: 165.38804805627188
+The expect volume of the balloon is 200 cm^3
+The actual volume of the balloon is: 200.0
