@@ -2,6 +2,7 @@ package com.example.buscience;
 
 import android.os.Bundle;
 import android.app.TabActivity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.Menu;
 import android.widget.*;
@@ -18,11 +19,11 @@ public class MainActivity extends TabActivity
 		
 		tabHost = (TabHost)findViewById(android.R.id.tabhost);
 		
-		tabHost.addTab(tabHost.newTabSpec("tab_Home").setIndicator("Home", getResources().getDrawable(R.drawable.icon_home_tab)).setContent(R.id.tab1));
-		tabHost.addTab(tabHost.newTabSpec("tab_Reg").setIndicator("Registration", getResources().getDrawable(R.drawable.icon_registration_tab)).setContent(R.id.tab2));
-		tabHost.addTab(tabHost.newTabSpec("tab_Cert").setIndicator("Certification", getResources().getDrawable(R.drawable.icon_certification_tab)).setContent(R.id.tab3));
-		tabHost.addTab(tabHost.newTabSpec("tab_Eval").setIndicator("Evaluation", getResources().getDrawable(R.drawable.icon_evaluation_tab)).setContent(R.id.tab4));
-		tabHost.addTab(tabHost.newTabSpec("tab_Contact").setIndicator("Contact", getResources().getDrawable(R.drawable.icon_contact_tab)).setContent(R.id.tab5));
+		tabHost.addTab(tabHost.newTabSpec("tab_Home").setIndicator("Home", getResources().getDrawable(R.drawable.icon_home_tab)).setContent(new Intent(this, HomeActivity.class)));
+		tabHost.addTab(tabHost.newTabSpec("tab_Reg").setIndicator("Registration", getResources().getDrawable(R.drawable.icon_registration_tab)).setContent(new Intent(this, RegistrationActivity.class)));
+		tabHost.addTab(tabHost.newTabSpec("tab_Cert").setIndicator("Certification", getResources().getDrawable(R.drawable.icon_certification_tab)).setContent(new Intent(this, CertificationActivity.class)));
+		tabHost.addTab(tabHost.newTabSpec("tab_Eval").setIndicator("Evaluation", getResources().getDrawable(R.drawable.icon_evaluation_tab)).setContent(new Intent(this, EvaluationActivity.class)));
+		tabHost.addTab(tabHost.newTabSpec("tab_Contact").setIndicator("Contact", getResources().getDrawable(R.drawable.icon_contact_tab)).setContent(new Intent(this, ContactActivity.class)));
 		
 	    for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) 
 	    {
