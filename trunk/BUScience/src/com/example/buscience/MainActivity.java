@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.view.Menu;
+import android.view.*;
 import android.widget.*;
 
 public class MainActivity extends TabActivity 
@@ -27,8 +27,11 @@ public class MainActivity extends TabActivity
 		
 	    for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) 
 	    {
-	        TextView tv = (TextView)tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
+	    	View v = tabHost.getTabWidget().getChildAt(i);
+	    	v.setPadding(0, 0, 0, 0);
+	        TextView tv = (TextView)v.findViewById(android.R.id.title);
 	        tv.setTextColor(Color.parseColor("#808080"));
+	        tv.setTextSize(8.5f);
 	    }
 	    
 		tabHost.setCurrentTab(0);
