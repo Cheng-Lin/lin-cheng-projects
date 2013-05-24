@@ -22,6 +22,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.buscience.HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:name="com.example.buscience.RegistrationActivity"
+            android:label="@string/title_activity_registration" >
+        </activity>
+        <activity
+            android:name="com.example.buscience.CertificationActivity"
+            android:label="@string/title_activity_certification" >
+        </activity>
+        <activity
+            android:name="com.example.buscience.EvaluationActivity"
+            android:label="@string/title_activity_evaluation" >
+        </activity>
+        <activity
+            android:name="com.example.buscience.ContactActivity"
+            android:label="@string/title_activity_contact" >
+        </activity>
     </application>
 
 </manifest>
