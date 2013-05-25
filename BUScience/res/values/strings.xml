@@ -9,5 +9,6 @@
     <string name="title_activity_certification">CertificationActivity</string>
     <string name="title_activity_evaluation">EvaluationActivity</string>
     <string name="title_activity_contact">ContactActivity</string>
+    <string name="icon">ICON</string>
 
 </resources>
