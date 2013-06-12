@@ -10,5 +10,14 @@
     <string name="title_activity_evaluation">EvaluationActivity</string>
     <string name="title_activity_contact">ContactActivity</string>
     <string name="icon">ICON</string>
+    <string name="str_img1">Image 1</string>
+    <string name="str_img2">Image 2</string>
+    <string name="str_img3">Image 3</string>
+    <string name="str_img4">Image 4</string>
+    <string name="str_img5">Image 5</string>
+    <string name="str_img6">Image 6</string>
+    <string name="str_img7">Image 7</string>
+    <string name="str_img8">Image 8</string>
+    <string name="str_img9">Image 9</string>
 
 </resources>
