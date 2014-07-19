@@ -2,7 +2,7 @@ package from011to020;
 
 public class Problem019 {
   public static enum Day {
-    MON(1), TUE(2), WED(3), THU(4), FRI(5), SAT(6), SUN(7);
+    SUN(0), MON(1), TUE(2), WED(3), THU(4), FRI(5), SAT(6);
     private int value;
 
     private Day(int value) {
