@@ -22,7 +22,7 @@ public class Problem018
 	public static void main(String[] args)
 	{
 		ArrayList<int[]> triangle = new ArrayList<int[]>();
-		File file = new File("problem\\from011to020\\Problem018.txt");
+		File file = new File("problem/from011to020/Problem018.txt");
 
 		try {
 			Scanner fin = new Scanner(file);

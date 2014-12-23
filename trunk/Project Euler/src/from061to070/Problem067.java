@@ -38,7 +38,7 @@ public class Problem067 {
 
   public static void main(String[] args) {
     ArrayList<int[]> triangle = new ArrayList<int[]>();
-    File file = new File("problem\\from061to070\\Problem067.txt");
+    File file = new File("problem/from061to070/Problem067.txt");
 
     try {
         Scanner fin = new Scanner(file);
