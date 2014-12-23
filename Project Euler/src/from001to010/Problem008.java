@@ -25,90 +25,139 @@ package from001to010;
  *		71636269561882670428252483600823257530420752963450
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Problem008 
 {
+	public static int charToInt(char c)
+	{
+		if (!(c >= '0' && c <= '9')) {
+			System.err.println("Invalid Character Input");
+			throw new NumberFormatException();
+		}
+		
+		return c - '0';
+	}
+
+	public static boolean copyArray(int[] from, int[] to)
+	{
+		if (from.length != to.length) {
+			return false;
+		}
+		
+		for (int i = 0; i < from.length; i++) {
+			to[i] = from[i];
+		}
+		
+		return true;
+	}
+	
+	public static long findProduct(int[] array)
+	{
+		long returnValue = 1;
+		
+		for (int i = 0; i < array.length; i++) {
+			returnValue *= array[i];
+		}
+		
+		return returnValue;
+	}
+	
 	public static void main(String[] args)
 	{
-		Scanner input = new Scanner(System.in);
-
-		String line = input.nextLine();
-		int[][] list = new int[20][line.length()];
-		int sum = 0;
-		int product = 0;
-
-		long start = System.currentTimeMillis();
-		for (int i = 0; i < 20; i++)
-		{
-			list[i][0] = Integer.parseInt(line.substring(0, 1));
-			list[i][1] = Integer.parseInt(line.substring(1, 2));
-			list[i][2] = Integer.parseInt(line.substring(2, 3));
-			list[i][3] = Integer.parseInt(line.substring(3, 4));
-			list[i][4] = Integer.parseInt(line.substring(4, 5));
-
-			int temp = list[i][0] + list[i][1] + list[i][2] + list[i][3] + list[i][4];
-			int temp2 = list[i][0] * list[i][1] * list[i][2] * list[i][3] * list[i][4];
-
-			if (temp2 > product)
-			{
-				sum = temp;
-				product = temp2;
-			}
-
-			for (int j = 5; j < line.length(); j++)
-			{
-				list[i][j] = Integer.parseInt(line.substring(j, j + 1));
-				if (list[i][j] > list[i][j - 5])
+		final int NUM_CONSEC = 13;
+		
+		File inputFile = new File("problem/from001to010/Problem008.txt");
+		Scanner fin = null;
+		
+		String line = null;
+		int temp = 0;
+		int[] maxList = new int[NUM_CONSEC];
+		int[] numList = new int[NUM_CONSEC];
+		long maxProd = 1;
+		long tempProd = 1;
+		
+		try {
+			fin = new Scanner(inputFile);
+			
+			long start = System.currentTimeMillis();
+			if (fin.hasNextLine()) {
+				line = fin.nextLine();
+				
+				numList[0] = charToInt(line.charAt(0));
+				maxProd = numList[0];
+				
+				int left = NUM_CONSEC - 1;
+				int index = 1;
+				
+				while (left > 0)
 				{
-					temp = (list[i][j - 4] + list[i][j - 3] + list[i][j - 2] + list[i][j - 1] + list[i][j]);
-					if (temp >= sum)
+					numList[NUM_CONSEC - left]
+							= charToInt(line.charAt(index));
+					maxProd *= numList[NUM_CONSEC - left];
+			
+					index++;
+					if (index == line.length()) 
 					{
-						temp2 = list[i][j - 4] * list[i][j - 3] * list[i][j - 2] * list[i][j - 1] * list[i][j];
-						if (temp2 > product)
-						{
-							sum = temp;
-							product = temp2;
+						if (!fin.hasNextLine()) {
+							System.out.println(maxProd);
+							fin.close();
+							System.exit(0);
 						}
+						
+						line = fin.nextLine();
+						index = 0;
 					}
+					left--;
 				}
-			}
-
-			if (i < 19)
-				line = input.nextLine();
-		}
-
-		for (int i = 0; i < list[0].length; i++)
-		{			
-			int temp = list[0][i] + list[1][i] + list[2][i] + list[3][i] + list[4][i];
-			int temp2 = list[0][i] * list[1][i] * list[2][i] * list[3][i] * list[4][i];
-
-			if (temp2 > product)
-			{
-				sum = temp;
-				product = temp2;
-			}
-			for (int j = 5; j < list.length; j++)
-			{
-				if (list[j][i] > list[j - 5][i])
-				{
-					temp = (list[j - 4][i] + list[j - 3][i] + list[j - 2][i] + list[j - 1][i] + list[j][i]);
-					if (temp >= sum)
+				tempProd = maxProd;
+				copyArray(numList, maxList);
+				
+				int first = 0;
+				
+				do {
+					for (int i = index; i < line.length(); i++)
 					{
-						temp2 = list[j - 4][i] * list[j - 3][i] * list[j - 2][i] * list[j - 1][i] * list[j][i];
-						if (temp2 > product)
-						{
-							sum = temp;
-							product = temp2;
+						int num = charToInt(line.charAt(i));
+						numList[first] = num;
+						tempProd = findProduct(numList);
+						first = (first + 1) % NUM_CONSEC;
+						
+						if (tempProd > maxProd) {
+							maxProd = tempProd;
+							copyArray(numList, maxList);
+							temp = first;
 						}
+						
+						numList[first] = num;
 					}
-				}
+					
+					if (!fin.hasNextLine()) {
+						break;
+					}
+					
+					line = fin.nextLine();
+					index = 0;
+				} while(true);
+			}
+			long stop = System.currentTimeMillis();
+			
+			System.out.println(start + " " + stop + " " + (stop - start));
+			System.out.println(maxProd);
+			for (int i = 0; i < NUM_CONSEC; i++) {
+				System.out.print(maxList[i] + " ");
+			}
+			System.out.println("\n" + temp);
+		} catch (FileNotFoundException | NumberFormatException e) {
+			System.err.println("Invalid Input File. Error Message: "
+					+ e.toString());
+			System.exit(1);
+		} finally {
+			if (fin != null) {
+				fin.close();
 			}
 		}
-
-		long stop = System.currentTimeMillis();
-		//
-		System.out.println(stop + " " + start + " " + (stop - start));
-		System.out.println(product);
 	}
 }
