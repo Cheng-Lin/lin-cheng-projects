@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class MaximiseSum 
@@ -11,24 +12,29 @@ public class MaximiseSum
 		{
 			int N = in.nextInt();
 			long M = in.nextInt();
-			long array[][] = new long[N][N];
+			
+			HashSet<Long> currResult = new HashSet<Long>();
+			HashSet<Long> tempResult = new HashSet<Long>();
 			
 			long max = 0;
 			for (int j = 0; j < N; j++)
 			{
-				array[j][j] = in.nextInt() % M;
-				if (max != M - 1) {
-					if (max < array[j][j]) {
-						max = array[j][j];
-					}
-					for (int k = 0; k < j; k++)
-					{
-						array[k][j] = (array[k][j - 1] + array[j][j]) % M;
-						if (max < array[k][j]) {
-							max = array[k][j];
-						}
-					}
+				long temp1 = in.nextInt() % M;
+				if (max < temp1) {
+					max = temp1;
 				}
+				tempResult.add(temp1);
+				for (long l : currResult)
+				{
+					long temp2 = (l + temp1) % M;
+					if (max < temp2) {
+						max = temp2;
+					}
+					tempResult.add(temp2);
+				}
+				
+				currResult = tempResult;
+				tempResult = new HashSet<Long>();
 			}
 			
 			System.out.println(max);
