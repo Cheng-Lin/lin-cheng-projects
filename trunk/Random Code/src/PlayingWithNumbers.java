@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+// Faster version in repository
+
 public class PlayingWithNumbers 
 {
 	public static void main(String[] args) 
@@ -16,15 +18,32 @@ public class PlayingWithNumbers
 			}
 			
 			int Q = in.nextInt();
-			for (int i = 0; i < Q; i++) 
+			
+			int x = in.nextInt();
+			int sum = 0;
+			for (int j = 0; j < N; j++)
 			{
-				int x = in.nextInt();
-				int sum = 0;
+				array[j] += x;
+				sum += Math.abs(array[j]);
+			}
+			System.out.println(sum);
+			
+			for (int i = 1; i < Q; i++) 
+			{
+				x = in.nextInt();
+				int negSum = 0;
+				int negCount = 0;
 				for (int j = 0; j < N; j++)
 				{
+					int temp = array[j];
 					array[j] += x;
-					sum += Math.abs(array[j]);
+					
+					if (array[j] < 0 || temp < 0) {
+						negSum += Math.abs(array[j]) - Math.abs(temp);
+						negCount++;
+					}
 				}
+				sum += x * (N - negCount) + negSum;
 				System.out.println(sum);
 			}
 		}
